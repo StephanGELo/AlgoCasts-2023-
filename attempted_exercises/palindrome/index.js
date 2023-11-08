@@ -45,3 +45,10 @@ module.exports = palindrome;
 //
 //   return str === reverse;
 // }
+
+// Fourth Solution using advance 'every' helper function
+// function palindrome(str) {
+//   return str.split('').every((char, i) => {
+//     return char === str[str.length - i - 1];
+//   });
+// }
