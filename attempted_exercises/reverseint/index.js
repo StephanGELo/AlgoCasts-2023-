@@ -8,9 +8,20 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+//helper function to reverse string
+function reverseStr(str) {
+  let reversed = "";
+
+  for(let char of str) {
+    reversed = char + reversed;
+  }
+
+  return reversed;
+}
+
 function reverseInt(n) {
   const sign = Math.sign(n);
-  const revString = n.toString().split('').reverse().join('');
+  const revString = reverseStr(n.toString());
   return sign * parseInt(revString);
 }
 
@@ -28,4 +39,11 @@ module.exports = reverseInt;
 //   }
 //
 //   return revN;
+// }
+
+// Second Solution using Math.sign() and parseInt()
+// function reverseInt(n) {
+//   const sign = Math.sign(n);
+//   const revString = n.toString().split('').reverse().join('');
+//   return sign * parseInt(revString);
 // }
