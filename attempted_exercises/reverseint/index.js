@@ -9,16 +9,23 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-
-  let strN = JSON.stringify(Math.abs(n));
-  let revStrN = strN.split('').reverse();
-  let revN = Number(revStrN.join(''));
-  
-  if (n < 0) {
-    return -revN;
-  }
-
-  return revN;
+  const sign = Math.sign(n);
+  const revString = n.toString().split('').reverse().join('');
+  return sign * parseInt(revString);
 }
 
 module.exports = reverseInt;
+
+// First Solution
+// function reverseInt(n) {
+//
+//   let strN = JSON.stringify(Math.abs(n));
+//   let revStrN = strN.split('').reverse();
+//   let revN = Number(revStrN.join(''));
+//
+//   if (n < 0) {
+//     return -revN;
+//   }
+//
+//   return revN;
+// }
